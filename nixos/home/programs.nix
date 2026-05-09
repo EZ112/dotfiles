@@ -93,6 +93,9 @@
         mount = pkgs.yaziPlugins.mount;
       };
       shellWrapperName = "y";
+      extraPackages = [
+        pkgs.ueberzugpp
+      ];
     };
 
     zoxide = {
