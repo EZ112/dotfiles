@@ -22,5 +22,6 @@
     fzf
     jamesdsp
     btop
+    fd
   ];
 }

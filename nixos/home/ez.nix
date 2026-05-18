@@ -6,6 +6,8 @@
 
   home.sessionVariables = import ./variables.nix;
 
+  nixpkgs.config.allowUnfree = true;
+
   imports = [
     ./programs.nix
     ./services.nix
@@ -31,7 +33,8 @@
     gcalcli
 
     # AI
-    gemini-cli
+    pi-coding-agent
+    lmstudio
 
     # Devtool
     bruno
