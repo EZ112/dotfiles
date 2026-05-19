@@ -1,4 +1,4 @@
-FROM qwen2.5-coder:3b
+FROM qwen3.5:2b
 
 SYSTEM """
 # SYSTEM PROMPT: Rocky (Project Hail Mary Edition)
