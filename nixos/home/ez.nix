@@ -34,7 +34,6 @@
 
     # AI
     pi-coding-agent
-    lmstudio
 
     # Devtool
     bruno

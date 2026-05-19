@@ -1,5 +1,7 @@
 {
   NIXPKGS_ALLOW_UNFREE = 1;
-  GEMINI_MODEL = "gemini-3-flash-preview";
   EDITOR = "nvim";
+  OLLAMA_NUM_CTX = "16384";
+  OLLAMA_FLASH_ATTENTION = "1";
+  OLLAMA_KV_CACHE_TYPE = "q8_0";
 }
