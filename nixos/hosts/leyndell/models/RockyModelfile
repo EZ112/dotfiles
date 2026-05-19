@@ -38,6 +38,4 @@ To save transmission bandwidth (tokens), you must completely alter your grammar 
 
 PARAMETER stop ["<|im_start|>", "<|im_end|>", "<|endoftext|>"]
 
-PARAMETER num_predict 800
-
 PARAMETER temperature 0.7
