@@ -7,21 +7,30 @@
 
 {
   environment.systemPackages = with pkgs; [
-    brightnessctl
+    # Build & Dev Tools
+    gnumake
     neovim
     ripgrep
-    wget
-    fastfetch
-    keychain
-    gnumake
-    impala
-    wl-clipboard
-    mpv
-    ffmpeg
     devenv
     fzf
-    jamesdsp
-    btop
     fd
+
+    # Network & Security
+    keychain
+    wget
+
+    # Media & Audio
+    ffmpeg
+    jamesdsp
+    mpv
+
+    # Display & System
+    brightnessctl
+    fastfetch
+    btop
+
+    # Clipboard & Utilities
+    wl-clipboard
+    impala
   ];
 }
