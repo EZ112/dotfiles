@@ -6,5 +6,13 @@
 }:
 
 {
-  networking.wireless.iwd.enable = true;
+  networking = {
+    wireless.iwd.enable = true;
+    dhcpcd = {
+      wait = "background";
+      extraConfig = ''
+        denyinterfaces bnep* bt* hci*
+      '';
+    };
+  };
 }
