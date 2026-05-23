@@ -19,4 +19,24 @@
     hyprshot
     hyprlock
   ];
+
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+
+    config = {
+      hyprland = {
+        default = [
+          "hyprland"
+          "gtk"
+        ];
+      };
+
+      common = {
+        default = [ "gtk" ];
+        "org.freedesktop.impl.portal.Screenshot" = [ "hyprland" ];
+        "org.freedesktop.impl.portal.ScreenCast" = [ "hyprland" ];
+      };
+    };
+  };
 }
