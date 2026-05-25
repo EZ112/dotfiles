@@ -78,7 +78,6 @@
     "yazi/keymap.toml".source = ../../yazi/keymap.toml;
 
     # Directory
-    "btop".source = ../../btop;
     "dunst".source = ../../dunst;
     "mpv".source = ../../mpv;
     "nvim/lua".source = ../../nvim/lua;

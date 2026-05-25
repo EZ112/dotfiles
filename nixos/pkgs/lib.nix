@@ -27,10 +27,10 @@
     # Display & System
     brightnessctl
     fastfetch
-    btop
 
     # Clipboard & Utilities
     wl-clipboard
     impala
+    unzip
   ];
 }
