@@ -19,7 +19,7 @@
   home.packages = with pkgs; [
     waybar # Bar
     font-manager # Font
-    swww # Wallpaper
+    awww # Wallpaper
     rofi # Window switcher
 
     # Notification
@@ -33,7 +33,7 @@
     gcalcli
 
     # AI
-    pi-coding-agent
+    claude-code
 
     # Devtool
     bruno
@@ -66,6 +66,7 @@
 
   home.file = {
     ".bashrc_local.example".source = ../../.bashrc_local.example;
+    ".claude/skills".source = ../../claude/skills;
   };
 
   xdg.configFile = {

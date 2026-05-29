@@ -4,6 +4,5 @@
   services.ollama = {
     enable = true;
     package = pkgs.ollama;
-    loadModels = [ "rocky" ];
   };
 }
