@@ -32,6 +32,9 @@
     # Calendar
     gcalcli
 
+    # Chat
+    discord
+
     # AI
     claude-code
 

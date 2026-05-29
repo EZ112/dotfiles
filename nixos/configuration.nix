@@ -28,7 +28,6 @@
 
     # Packages
     ./pkgs/lib.nix
-    ./pkgs/chat.nix
 
     # Home Manager
     ./home/config.nix
