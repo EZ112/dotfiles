@@ -1,4 +1,8 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  ...
+}:
 
 {
   home.username = "ez";
@@ -42,6 +46,9 @@
     bruno
     devtoolbox
 
+    # File manager
+    pcmanfm
+
     # Package manager
     luajitPackages.luarocks
 
@@ -66,6 +73,13 @@
     xmlformat
     nixfmt
   ];
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "inode/directory" = "pcmanfm.desktop";
+    };
+  };
 
   home.file = {
     ".bashrc_local.example".source = ../../.bashrc_local.example;

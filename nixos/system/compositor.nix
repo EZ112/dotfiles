@@ -44,4 +44,34 @@
       };
     };
   };
+
+  systemd.user.services.xdg-desktop-portal = {
+    unitConfig = {
+      After = [ "graphical-session.target" ];
+    };
+    serviceConfig = {
+      Restart = "on-failure";
+      RestartSec = "3s";
+    };
+  };
+
+  systemd.user.services.xdg-desktop-portal-gtk = {
+    unitConfig = {
+      After = [ "graphical-session.target" ];
+    };
+    serviceConfig = {
+      Restart = "on-failure";
+      RestartSec = "3s";
+    };
+  };
+
+  systemd.user.services.xdg-desktop-portal-hyprland = {
+    unitConfig = {
+      After = [ "graphical-session.target" ];
+    };
+    serviceConfig = {
+      Restart = "on-failure";
+      RestartSec = "3s";
+    };
+  };
 }
