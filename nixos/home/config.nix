@@ -1,11 +1,16 @@
 {
   config,
+  inputs,
   lib,
   pkgs,
   ...
 }:
 
 {
-  home-manager.users.ez = ./ez.nix;
-  home-manager.backupFileExtension = "backup";
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+
+    users.ez = ./ez/user.nix;
+    backupFileExtension = "backup";
+  };
 }

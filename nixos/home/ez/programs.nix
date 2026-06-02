@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 
 {
   programs = {
@@ -79,7 +84,7 @@
       plugins = with pkgs; [
         tmuxPlugins.gruvbox
       ];
-      extraConfig = builtins.readFile ../../tmux/tmux.conf;
+      extraConfig = builtins.readFile (inputs.self + /tmux/tmux.conf);
     };
 
     yazi = {
