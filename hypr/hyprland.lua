@@ -7,7 +7,7 @@ require("workspaces")
 
 local terminal = "alacritty"
 local fileManager = "pcmanfm"
-local menu = "rofi -show drun"
+local menu = "rofi -show drun -run-command 'uwsm app -- {cmd}'"
 
 -------------------
 ---- AUTOSTART ----
