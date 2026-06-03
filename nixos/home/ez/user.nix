@@ -27,8 +27,11 @@ in
     packages = with pkgs; [
       waybar # Bar
       font-manager # Font
-      awww # Wallpaper
       rofi # Window switcher
+
+      # Wallpaper
+      awww
+      mpvpaper
 
       # Notification
       dunst
