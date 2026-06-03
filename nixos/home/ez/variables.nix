@@ -1,6 +1,9 @@
 {
   NIXPKGS_ALLOW_UNFREE = 1;
   EDITOR = "nvim";
+  LIBVA_DRIVER_NAME = "nvidia";
+  __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+  GBM_BACKEND = "nvidia-drm";
   OLLAMA_FLASH_ATTENTION = 1;
   OLLAMA_KV_CACHE_TYPE = "q8_0";
 }
