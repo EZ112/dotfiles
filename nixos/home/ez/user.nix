@@ -2,10 +2,12 @@
   config,
   inputs,
   pkgs,
+  osConfig,
   ...
 }:
 
 let
+  hostname = osConfig.networking.hostName;
   mapDotfiles = files: builtins.mapAttrs (name: value: { source = inputs.self + value; }) files;
 in
 {
@@ -14,7 +16,6 @@ in
   imports = [
     ./programs.nix
     ./services.nix
-    ./workspaces.nix
     ./ssh.nix
     ./gtk.nix
   ];
@@ -95,8 +96,10 @@ in
 
     configFile = mapDotfiles {
       # File
-      "hypr/hyprland.conf" = /hypr/hyprland.conf;
+      "hypr/hyprland.lua" = /hypr/hyprland.lua;
       "hypr/hyprlock.conf" = /hypr/hyprlock.conf;
+      "hypr/workspaces.lua" = /hypr/workspaces.lua;
+      "hypr/${hostname}/workspaces.lua" = /hypr/${hostname}/workspaces.lua;
       "nvim/init.lua" = /nvim/init.lua;
       "nvim/stylua.toml" = /nvim/stylua.toml;
       "starship.toml" = /starship.toml;
