@@ -31,7 +31,7 @@ in
 
       # Wallpaper
       awww
-      mpvpaper
+      waypaper
 
       # Notification
       dunst

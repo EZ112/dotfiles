@@ -13,32 +13,9 @@ local menu = "rofi -show drun -run-command 'uwsm app -- {cmd}'"
 ---- AUTOSTART ----
 -------------------
 
-local function has_video_in_dir(dir)
-	local extensions = { "mp4" }
-
-	for _, ext in ipairs(extensions) do
-		local cmd = io.popen('find "' .. dir .. '" -maxdepth 1 -name "*.' .. ext .. '" | head -1')
-		local result = cmd:read("*l")
-		cmd:close()
-		if result and result ~= "" then
-			return true, result
-		end
-	end
-
-	return false, nil
-end
-
-local home = os.getenv("HOME")
-local found, file = has_video_in_dir(home .. "/dotfiles/wallpapers")
-
 hl.on("hyprland.start", function()
 	hl.exec_cmd("uwsm finalize")
-	if found then
-		hl.exec_cmd("uwsm app -- mpvpaper -p -o 'no-audio hwdec=auto hwdec-codecs=all cache=no loop' '*' " .. file)
-	else
-		hl.exec_cmd("uwsm app -- awww-daemon")
-	end
-
+	hl.exec_cmd("uwsm app -- waypaper --restore")
 	hl.exec_cmd("uwsm app -- waybar")
 	hl.exec_cmd("uwsm app -- discord")
 	-- Clipboard
