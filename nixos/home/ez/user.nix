@@ -99,6 +99,7 @@ in
 
     configFile = mapDotfiles {
       # File
+      "fastfetch/config.jsonc" = /fastfetch/config.jsonc;
       "hypr/hyprland.lua" = /hypr/hyprland.lua;
       "hypr/hyprlock.conf" = /hypr/hyprlock.conf;
       "hypr/workspaces.lua" = /hypr/workspaces.lua;
