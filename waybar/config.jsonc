@@ -1,62 +1,62 @@
 {
-   "position": "top",
-   "reload_style_on_change": true,
-   "modules-left": ["hyprland/workspaces"],
-   "modules-center": ["clock"],
-   "modules-right": ["group/expand", "bluetooth", "network", "battery"],
-   "hyprland/workspaces": {
-      "persistent-workspaces": {
-        "*": [1,2,3,4]
-      }
-   },
-   "clock":{
-      "format": "{:%a, %d %b, %H:%M}"
-   },
-   "custom/expand": {
-      "format": "",
-      "tooltip": false
-   },
-   "group/expand": {
-      "orientation": "horizontal",
-      "drawer": {
-	 "transition-duration": 600,
-	 "transition-to-left": true,
-	 "click-to-reveal": true
-      },
-      "modules": ["custom/expand", "cpu","memory","temperature"]
-   },
-   "cpu": {
-      "format": "{usage}% 󰻠"
-   },
-   "memory": {
-      "format": "{percentage}% "
-   },
-   "temperature": {
-      "format": "{temperatureC}°C "
-   },
-   "bluetooth": {
-      "format": "󰂯",
-      "format-on": "󰂯",
-      "format-off": "BT-off",
-      "format-disabled": "󰂲",
-      "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-      "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
-      "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%"
-   },
-   "network": {
-      "format-wifi": "",
-      "format-ethernet":"",
-      "format-disconnected": "",
-      "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-      "tooltip-format-ethernet": "{ifname} "
-   },
-   "battery": {
-      "format": "{capacity}% {icon}",
-      "format-icons": ["", "", "", "", ""],
-      "states": {
-        "warning": 25,
-        "critical": 10
-      }
-   }
+  "position": "top",
+  "reload_style_on_change": true,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["group/expand", "bluetooth", "network", "battery"],
+  "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4]
+    }
+  },
+  "clock": {
+    "format": "{:%a, %d %b, %H:%M}"
+  },
+  "custom/expand": {
+    "format": "",
+    "tooltip": false
+  },
+  "group/expand": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 600,
+      "transition-to-left": true,
+      "click-to-reveal": true
+    },
+    "modules": ["custom/expand", "cpu", "memory", "temperature"]
+  },
+  "cpu": {
+    "format": "{usage}% 󰻠"
+  },
+  "memory": {
+    "format": "{percentage}% "
+  },
+  "temperature": {
+    "format": "{temperatureC}°C "
+  },
+  "bluetooth": {
+    "format": "󰂯",
+    "format-on": "󰂯",
+    "format-off": "BT-off",
+    "format-disabled": "󰂲",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%"
+  },
+  "network": {
+    "format-wifi": "",
+    "format-ethernet": "",
+    "format-disconnected": "",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} "
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "states": {
+      "warning": 25,
+      "critical": 10
+    }
+  }
 }
