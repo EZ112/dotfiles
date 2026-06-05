@@ -25,6 +25,7 @@
     mpv
 
     # Display & System
+    systemd-manager-tui
     brightnessctl
     fastfetch
 
