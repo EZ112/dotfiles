@@ -16,15 +16,6 @@ hl.monitor({
 
 hl.workspace_rule({ workspace = "1", monitor = "eDP-1", default = true })
 
--------------------
----- AUTOSTART ----
--------------------
-
-hl.on("hyprland.start", function()
-	hl.exec_cmd("uwsm app -- brave")
-	hl.exec_cmd("uwsm app -- alacritty")
-end)
-
 -----------------------
 ---- WINDOW RULES ----
 -----------------------

@@ -17,18 +17,9 @@ hl.workspace_rule({ workspace = "5", monitor = "DP-3" })
 hl.workspace_rule({ workspace = "9", monitor = "HDMI-A-1" })
 hl.workspace_rule({ workspace = "10", monitor = "HDMI-A-1" })
 
--------------------
----- AUTOSTART ----
--------------------
-
-hl.on("hyprland.start", function()
-	hl.exec_cmd("uwsm app -- brave")
-	hl.exec_cmd("uwsm app -- alacritty")
-end)
-
---------------------
----- WINDOW RULES --
---------------------
+--------------------------
+---- WINDOW RULES ----
+--------------------------
 
 hl.window_rule({
 	name = "picture-in-picture",

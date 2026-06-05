@@ -1,0 +1,60 @@
+# Theming
+font: Inconsolata Nerd Font 12
+background: "#282828CC"
+color: "#ebdbb2"
+separator: " ➜ "
+border_width: 0
+corner_r: 8
+padding: 16
+rows_per_column: 4
+column_padding: 24
+anchor: center
+inhibit_compositor_keyboard_shortcuts: true
+auto_kbd_layout: true
+
+menu:
+  - key: "p"
+    desc: Power
+    submenu:
+      - key: "s"
+        desc: Sleep
+        cmd: systemctl suspend
+      - key: "r"
+        desc: Reboot
+        cmd: reboot
+      - key: "o"
+        desc: Off
+        cmd: poweroff
+  - key: "b"
+    desc:
+    submenu:
+      - key: "e"
+        desc: Browser - brave
+        cmd: uwsm app -- brave
+      - key: "m"
+        desc: Bluetooth - blueman
+        cmd: uwsm app -- blueman-manager
+      - key: "o"
+        desc: API Client - bruno
+        cmd: uwsm app -- bruno
+  - key: "d"
+    desc:
+    submenu:
+      - key: "c"
+        desc: Discord
+        cmd: uwsm app -- discord
+      - key: "t"
+        desc: Devtools
+        cmd: uwsm app -- devtoolbox
+  - key: "f"
+    desc: File Manager - pcmanfm
+    cmd: uwsm app -- pcmanfm
+  - key: "o"
+    desc: Broadcast - obs
+    cmd: uwsm app -- obs
+  - key: "t"
+    desc: Terminal - alacritty
+    cmd: uwsm app -- alacritty
+  - key: "w"
+    desc: Wallpaper - waypaper
+    cmd: uwsm app -- waypaper

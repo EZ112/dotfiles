@@ -5,9 +5,7 @@ require("workspaces")
 ---- MY PROGRAMS ----
 ---------------------
 
-local terminal = "alacritty"
-local fileManager = "pcmanfm"
-local menu = "rofi -show drun -run-command 'uwsm app -- {cmd}'"
+local menu = "wlr-which-key"
 
 -------------------
 ---- AUTOSTART ----
@@ -17,7 +15,6 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("uwsm finalize")
 	hl.exec_cmd("uwsm app -- waypaper --restore")
 	hl.exec_cmd("uwsm app -- waybar")
-	hl.exec_cmd("uwsm app -- discord")
 	-- Clipboard
 	hl.exec_cmd("uwsm app -- wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("uwsm app -- wl-paste --type image --watch cliphist store")
@@ -116,20 +113,16 @@ hl.animation({ leaf = "workspaces", enabled = true, speed = 3, bezier = "default
 local mainMod = "SUPER"
 
 -- Applications
-hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(
 	mainMod .. " + M",
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
 )
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("hyprlock"))
 
--- Rofi launchers
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("rofi -show run"))
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("rofi -show window"))
+-- App launchers
 hl.bind(mainMod .. " + Super_L", hl.dsp.exec_cmd(menu), { release = true })
 
 -- Move focus (vim-style)

@@ -25,9 +25,9 @@ in
     homeDirectory = "/home/ez";
     sessionVariables = import ./variables.nix;
     packages = with pkgs; [
+      wlr-which-key # App launcher
       waybar # Bar
       font-manager # Font
-      rofi # Window switcher
 
       # Wallpaper
       awww
@@ -114,8 +114,8 @@ in
       "mpv" = /mpv;
       "nvim/lua" = /nvim/lua;
       "nvim/lsp" = /nvim/lsp;
-      "rofi" = /rofi;
       "waybar" = /waybar;
+      "wlr-which-key" = /wlr-which-key;
       "yazi/flavors" = /yazi/flavors;
     };
   };
