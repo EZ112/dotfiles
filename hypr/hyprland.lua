@@ -4,7 +4,7 @@ require("workspaces")
 ---------------------
 ---- MY PROGRAMS ----
 ---------------------
-
+local terminal = "alacritty"
 local menu = "wlr-which-key"
 
 -------------------
@@ -113,9 +113,10 @@ hl.animation({ leaf = "workspaces", enabled = true, speed = 3, bezier = "default
 local mainMod = "SUPER"
 
 -- Applications
+hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(
-	mainMod .. " + M",
+	mainMod .. " + grave",
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
 )
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
