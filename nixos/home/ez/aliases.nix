@@ -3,5 +3,5 @@
   sw-boot = "sudo /run/current-system/bin/switch-to-configuration boot";
   nrs = "sudo nixos-rebuild switch --flake $HOME/dotfiles#$(hostname)";
   ncg = "sudo nix-collect-garbage -d && nix-collect-garbage -d";
-  qwen-sync = "ollama create qwen-$(hostname) -f $HOME/dotfiles/llm/$(hostname)/Modelfile";
+  llm-sync = "ollama create qwen-$(hostname) -f $HOME/dotfiles/ai/llm/$(hostname)/Modelfile";
 }

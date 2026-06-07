@@ -95,7 +95,7 @@ in
     file = mkDotfileLinks {
       files = {
         ".bashrc_local.example" = ".bashrc_local.example";
-        ".claude/skills" = "claude/skills";
+        ".claude/skills" = "ai/claude/skills";
       };
       store = false;
     };
@@ -114,21 +114,22 @@ in
     configFile =
       mkDotfileLinks {
         files = {
-          "dunst" = "dunst";
-          "fastfetch" = "fastfetch";
+          "dunst/dunstrc" = "configs/dunstrc";
+          "fastfetch/config.jsonc" = "configs/fastfetch.jsonc";
+          "mpv/input.conf" = "configs/mpv.conf";
+          "starship.toml" = "configs/starship.toml";
+          "wlr-which-key/config.yaml" = "configs/wlr-which-key.yml";
+
           "hypr" = "hypr";
-          "mpv" = "mpv";
           "nvim" = "nvim";
-          "starship.toml" = "starship.toml";
-          "waybar" = "waybar";
-          "wlr-which-key" = "wlr-which-key";
+          "waybar" = "configs/waybar";
         };
         store = false;
       }
       // mkDotfileLinks {
         files = {
-          "yazi/keymap.toml" = /yazi/keymap.toml;
-          "yazi/flavors" = /yazi/flavors;
+          "yazi/keymap.toml" = /configs/yazi/keymap.toml;
+          "yazi/flavors" = /configs/yazi/flavors;
         };
       };
   };

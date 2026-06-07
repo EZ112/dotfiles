@@ -84,7 +84,7 @@
       plugins = with pkgs; [
         tmuxPlugins.gruvbox
       ];
-      extraConfig = builtins.readFile (inputs.self + /tmux/tmux.conf);
+      extraConfig = builtins.readFile (inputs.self + /configs/tmux.conf);
     };
 
     yazi = {
