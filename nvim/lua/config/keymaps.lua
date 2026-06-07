@@ -46,18 +46,22 @@ map('n', ']c', function()
   if vim.wo.diff then
     vim.cmd.normal({ ']c', bang = true })
   else
-    gitsigns.nav_hunk('next')
+    gitsigns.nav_hunk('next', { target = 'all' })
   end
 end, { desc = 'Next hunk' })
 map('n', '[c', function()
   if vim.wo.diff then
     vim.cmd.normal({ '[c', bang = true })
   else
-    gitsigns.nav_hunk('prev')
+    gitsigns.nav_hunk('prev', { target = 'all' })
   end
 end, { desc = 'Prev hunk' })
 map('n', '<leader>gbm', gitsigns.blame, { desc = 'Git blame' })
 map('n', '<leader>gd', gitsigns.diffthis, { desc = 'Git diff' })
+map('n', '<leader>hs', gitsigns.stage_hunk, { desc = 'Git stage hunk' })
+map('n', '<leader>hu', gitsigns.undo_stage_hunk, { desc = 'Git undo stage hunk' })
+map('n', '<leader>hr', gitsigns.reset_hunk, { desc = 'Git reset hunk' })
+map('n', '<leader>hi', gitsigns.preview_hunk_inline, { desc = 'Git preview hunk inline' })
 
 -- harpoon
 local harpoon = require('harpoon')
