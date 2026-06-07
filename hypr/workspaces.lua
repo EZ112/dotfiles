@@ -1,36 +1,46 @@
----@diagnostic disable: need-check-nil, undefined-global
+local utils = require("utils")
 
-hl.window_rule({
-	name = "ignore-max",
-	match = { class = ".*" },
-	suppress_event = "maximize",
+local window_rules = {
+	{
+		name = "ignore-max",
+		match = { class = ".*" },
+		suppress_event = "maximize",
+	},
+	{
+		name = "xwayland-drag-fix",
+		match = { class = "^$", title = "^$", xwayland = true, float = true },
+		no_focus = true,
+	},
+	{
+		name = "discord",
+		match = { class = "^(discord)$" },
+		no_initial_focus = true,
+		workspace = 10,
+	},
+	{
+		name = "ueberzugpp",
+		match = { class = "^ueberzugpp_.*", title = "^ueberzugpp_.*" },
+		float = true,
+		pin = true,
+		move = "((monitor_w-window_w)-10) 10",
+		no_focus = true,
+	},
+}
+
+utils.apply_all_rules({
+	{ hl.window_rule, window_rules },
 })
 
-hl.window_rule({
-	name = "xwayland-drag-fix",
-	match = { class = "^$", title = "^$", xwayland = true, float = true },
-	no_focus = true,
-})
-
-hl.window_rule({
-	name = "discord",
-	match = { class = "^(discord)$" },
-	no_initial_focus = true,
-	workspace = 10,
-})
-
-hl.window_rule({
-	name = "ueberzugpp",
-	match = { class = "^ueberzugpp_.*", title = "^ueberzugpp_.*" },
-	float = true,
-	pin = true,
-	move = "((monitor_w-window_w)-10) 10",
-	no_focus = true,
-})
-
+local hostname = nil
 local f = io.popen("hostname")
-local hostname = f:read("*l")
-f:close()
+if f then
+	hostname = f:read("*l") or ""
+	f:close()
+end
+
+if not hostname or hostname == "" then
+	error("Could not determine hostname")
+end
 
 local ok, err = pcall(require, hostname .. "/workspaces")
 if not ok then

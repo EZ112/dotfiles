@@ -1,58 +1,46 @@
----@diagnostic disable: undefined-global
---------------------
----- MONITORS ----
---------------------
+local utils = require("utils")
 
-hl.monitor({ output = "", mode = "preferred", position = "auto", scale = "auto" })
+local monitor_rules = { { output = "", mode = "preferred", position = "auto", scale = "auto" } }
+local workspace_rules = {
+	{ workspace = "1", monitor = "HDMI-A-1", default = true },
+	{ workspace = "2", monitor = "DP-3", default = true },
+	{ workspace = "3", monitor = "DP-3" },
+	{ workspace = "4", monitor = "DP-3" },
+	{ workspace = "5", monitor = "DP-3" },
+	{ workspace = "9", monitor = "HDMI-A-1" },
+	{ workspace = "10", monitor = "HDMI-A-1" },
+}
+local window_rules = {
+	{
+		name = "brave-browser",
+		match = { class = "^(brave-browser)$" },
+		no_initial_focus = true,
+		workspace = 1,
+	},
+	{
+		name = "picture-in-picture",
+		match = { title = "^[Pp]icture\\s*-?\\s*[Ii]n\\s*-?\\s*[Pp]icture$" },
+		float = true,
+		pin = true,
+		move = "((monitor_w-window_w)-10) ((monitor_h-window_h)-10)",
+		workspace = 2,
+	},
+	{
+		name = "alacritty",
+		match = { class = "^(Alacritty)$" },
+		workspace = 2,
+	},
+}
+local device_rules = {
+	{
+		name = "hid-256c:006d",
+		output = "DP-3",
+	},
+}
 
---------------------------
----- WORKSPACE RULES ----
---------------------------
-
-hl.workspace_rule({ workspace = "1", monitor = "HDMI-A-1", default = true })
-hl.workspace_rule({ workspace = "2", monitor = "DP-3", default = true })
-hl.workspace_rule({ workspace = "3", monitor = "DP-3" })
-hl.workspace_rule({ workspace = "4", monitor = "DP-3" })
-hl.workspace_rule({ workspace = "5", monitor = "DP-3" })
-hl.workspace_rule({ workspace = "9", monitor = "HDMI-A-1" })
-hl.workspace_rule({ workspace = "10", monitor = "HDMI-A-1" })
-
---------------------------
----- WINDOW RULES ----
---------------------------
-
-hl.window_rule({
-	name = "picture-in-picture",
-	match = { title = "^[Pp]icture\\s*-?\\s*[Ii]n\\s*-?\\s*[Pp]icture$" },
-	float = true,
-	pin = true,
-	move = "((monitor_w-window_w)-10) ((monitor_h-window_h)-10)",
-	workspace = 2,
-})
-
-hl.window_rule({
-	name = "brave-browser",
-	match = { class = "^(brave-browser)$" },
-	no_initial_focus = true,
-	workspace = 1,
-})
-
-hl.window_rule({
-	name = "alacritty",
-	match = { class = "^(Alacritty)$" },
-	workspace = 2,
-})
-
------------------
----- DEVICES ----
------------------
-
-hl.device({
-	name = "wacom-hid-521c-finger",
-	enabled = false,
-})
-
-hl.device({
-	name = "hid-256c:006d",
-	output = "DP-3",
+utils.apply_all_rules({
+	{ hl.monitor, monitor_rules },
+	{ hl.workspace_rule, workspace_rules },
+	{ hl.window_rule, window_rules },
+	{ hl.device, device_rules },
 })

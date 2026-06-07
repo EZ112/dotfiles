@@ -23,7 +23,7 @@ in
   home = {
     username = "ez";
     homeDirectory = "/home/ez";
-    sessionVariables = import ./variables.nix;
+    sessionVariables = import ./variables.nix { inherit pkgs; };
     packages = with pkgs; [
       wlr-which-key # App launcher
       waybar # Bar
@@ -100,8 +100,11 @@ in
     configFile = mapDotfiles {
       # File
       "fastfetch/config.jsonc" = /fastfetch/config.jsonc;
+      "hypr/general.lua" = /hypr/general.lua;
       "hypr/hyprland.lua" = /hypr/hyprland.lua;
+      "hypr/keybinds.lua" = /hypr/keybinds.lua;
       "hypr/hyprlock.conf" = /hypr/hyprlock.conf;
+      "hypr/utils.lua" = /hypr/utils.lua;
       "hypr/workspaces.lua" = /hypr/workspaces.lua;
       "hypr/${hostname}/workspaces.lua" = /hypr/${hostname}/workspaces.lua;
       "nvim/init.lua" = /nvim/init.lua;

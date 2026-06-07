@@ -1,4 +1,4 @@
-vim.lsp.enable({
+local servers = {
   'lua_ls',
   'eslint',
   'ts_ls',
@@ -7,7 +7,9 @@ vim.lsp.enable({
   'basedpyright',
   'ruff',
   'tailwindcss',
-})
+}
+
+vim.lsp.enable(servers)
 
 local diagnostic = vim.diagnostic
 diagnostic.config({
