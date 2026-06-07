@@ -7,8 +7,19 @@
 }:
 
 let
-  hostname = osConfig.networking.hostName;
-  mapDotfiles = files: builtins.mapAttrs (name: value: { source = inputs.self + value; }) files;
+  dotfilesDir = "${config.home.homeDirectory}/dotfiles";
+  mkDotfileLinks =
+    {
+      files,
+      store ? true,
+    }:
+    builtins.mapAttrs (name: value: {
+      source =
+        if store then
+          inputs.self + value
+        else
+          config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/${value}";
+    }) files;
 in
 {
   nixpkgs.config.allowUnfree = true;
@@ -81,9 +92,12 @@ in
       nixfmt
     ];
 
-    file = mapDotfiles {
-      ".bashrc_local.example" = /.bashrc_local.example;
-      ".claude/skills" = /claude/skills;
+    file = mkDotfileLinks {
+      files = {
+        ".bashrc_local.example" = ".bashrc_local.example";
+        ".claude/skills" = "claude/skills";
+      };
+      store = false;
     };
 
     stateVersion = "25.05"; # Do not Change this value
@@ -97,29 +111,25 @@ in
       };
     };
 
-    configFile = mapDotfiles {
-      # File
-      "fastfetch/config.jsonc" = /fastfetch/config.jsonc;
-      "hypr/general.lua" = /hypr/general.lua;
-      "hypr/hyprland.lua" = /hypr/hyprland.lua;
-      "hypr/keybinds.lua" = /hypr/keybinds.lua;
-      "hypr/hyprlock.conf" = /hypr/hyprlock.conf;
-      "hypr/utils.lua" = /hypr/utils.lua;
-      "hypr/workspaces.lua" = /hypr/workspaces.lua;
-      "hypr/${hostname}/workspaces.lua" = /hypr/${hostname}/workspaces.lua;
-      "nvim/init.lua" = /nvim/init.lua;
-      "nvim/stylua.toml" = /nvim/stylua.toml;
-      "starship.toml" = /starship.toml;
-      "yazi/keymap.toml" = /yazi/keymap.toml;
-
-      # Directory
-      "dunst" = /dunst;
-      "mpv" = /mpv;
-      "nvim/lua" = /nvim/lua;
-      "nvim/lsp" = /nvim/lsp;
-      "waybar" = /waybar;
-      "wlr-which-key" = /wlr-which-key;
-      "yazi/flavors" = /yazi/flavors;
-    };
+    configFile =
+      mkDotfileLinks {
+        files = {
+          "dunst" = "dunst";
+          "fastfetch" = "fastfetch";
+          "hypr" = "hypr";
+          "mpv" = "mpv";
+          "nvim" = "nvim";
+          "starship.toml" = "starship.toml";
+          "waybar" = "waybar";
+          "wlr-which-key" = "wlr-which-key";
+        };
+        store = false;
+      }
+      // mkDotfileLinks {
+        files = {
+          "yazi/keymap.toml" = /yazi/keymap.toml;
+          "yazi/flavors" = /yazi/flavors;
+        };
+      };
   };
 }
