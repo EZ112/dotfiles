@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   nix.settings = {
     substituters = [ "https://cache.nixos-cuda.org" ];

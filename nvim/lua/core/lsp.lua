@@ -1,4 +1,5 @@
 local servers = {
+  'nixd',
   'lua_ls',
   'eslint',
   'ts_ls',

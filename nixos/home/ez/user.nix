@@ -2,7 +2,6 @@
   config,
   inputs,
   pkgs,
-  osConfig,
   ...
 }:
 
@@ -71,6 +70,7 @@ in
       luajitPackages.luarocks
 
       # LSP
+      nixd
       jdt-language-server
       lombok
       lua-language-server
