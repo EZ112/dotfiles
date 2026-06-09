@@ -23,7 +23,13 @@ return {
     end
 
     for _, ft in ipairs(js_ft) do
-      formatters_by_ft[ft] = { 'eslint_d', 'prettierd' }
+      formatters_by_ft[ft] = function(bufnr)
+        if vim.fs.root(bufnr, { 'deno.json', 'deno.jsonc' }) then
+          return { 'prettierd', 'deno_fmt' }
+        else
+          return { 'prettierd', 'eslint_d' }
+        end
+      end
     end
 
     formatters_by_ft['java'] = { 'google-java-format' }

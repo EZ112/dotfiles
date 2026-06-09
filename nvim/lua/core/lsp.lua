@@ -2,6 +2,7 @@ local servers = {
   'lua_ls',
   'eslint',
   'ts_ls',
+  'denols',
   'emmet_ls',
   'cssls',
   'basedpyright',
