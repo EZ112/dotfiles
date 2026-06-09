@@ -17,7 +17,6 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       home-manager,
       disko,
@@ -25,27 +24,22 @@
     }@inputs:
     let
       system = "x86_64-linux";
+      commonModules = [
+        home-manager.nixosModules.home-manager
+        disko.nixosModules.disko
+      ];
+      mkHost =
+        host:
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs; };
+          modules = [ ./nixos/hosts/${host} ] ++ commonModules;
+        };
     in
     {
       nixosConfigurations = {
-        leyndell = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./nixos/hosts/leyndell
-            home-manager.nixosModules.home-manager
-            disko.nixosModules.disko
-          ];
-        };
-        nokron = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./nixos/hosts/nokron
-            home-manager.nixosModules.home-manager
-            disko.nixosModules.disko
-          ];
-        };
+        leyndell = mkHost "leyndell";
+        nokron = mkHost "nokron";
       };
     };
 }
