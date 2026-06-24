@@ -12,10 +12,11 @@ RowLayout {
         Rectangle {
             required property HyprlandWorkspace modelData
 
-            Layout.preferredWidth: modelData.active ? 52 : 24
+            Layout.preferredWidth: modelData.focused ? 52 : 24
             Layout.preferredHeight: 18
+
+            color: modelData.focused ? Theme.fgColor : Theme.fgMutedColor
             radius: 4
-            color: modelData.active ? Theme.fgColor : Theme.fgMutedColor
 
             Behavior on Layout.preferredWidth {
                 NumberAnimation {

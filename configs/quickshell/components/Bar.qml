@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Layouts
 import "../"
 
 Item {
@@ -43,13 +44,21 @@ Item {
         anchors.verticalCenter: parent.verticalCenter
 
         height: Theme.barItemHeight
-        width: battery.implicitWidth + 16
+        width: rightSection.implicitWidth + 16
         color: Qt.alpha(Theme.bgColor, 0.4)
         radius: Theme.bgRadius
 
-        Battery {
-            id: battery
+        RowLayout {
+            id: rightSection
             anchors.centerIn: parent
+            spacing: 8
+
+            Battery {
+                id: battery
+            }
+            Network {
+                id: network
+            }
         }
     }
 }
