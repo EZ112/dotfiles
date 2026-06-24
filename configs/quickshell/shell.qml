@@ -1,17 +1,25 @@
 import Quickshell
 import QtQuick
 
-PanelWindow {
-    anchors {
-        top: true
-        left: true
-        right: true
-    }
+Variants {
+    model: Quickshell.screens
+    delegate: Component {
+        PanelWindow {
+            required property var modelData
+            screen: modelData
 
-    implicitHeight: Theme.barHeight
-    color: "transparent"
+            anchors {
+                top: true
+                left: true
+                right: true
+            }
 
-    Bar {
-        anchors.fill: parent
+            implicitHeight: Theme.barHeight
+            color: "transparent"
+
+            Bar {
+                anchors.fill: parent
+            }
+        }
     }
 }
