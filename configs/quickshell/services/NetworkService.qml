@@ -10,8 +10,16 @@ QtObject {
     readonly property bool isWifi: wifiDevice !== undefined && wifiDevice.state === ConnectionState.Connected
     readonly property bool isEthernet: wiredDevice !== undefined && wiredDevice.state === ConnectionState.Connected
 
-    readonly property int strength: isWifi ? wifiDevice.activeNetwork.strength : 0
-    readonly property string ssid: isWifi ? wifiDevice.activeNetwork.ssid : ""
+    readonly property var wifiNetwork: {
+        if (!isWifi)
+            return null;
+        return wifiDevice.networks.values.find(d => d instanceof WifiNetwork);
+    }
+    readonly property int strength: {
+        if (!wifiNetwork)
+            return 0;
+        return Math.round(wifiNetwork.signalStrength * 100);
+    }
 
     readonly property var icons: ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
     readonly property string icon: {

@@ -6,5 +6,5 @@ Text {
     color: BatteryService.statusColor
     font.family: Theme.fontFamily
     font.pixelSize: Theme.fontSize
-    text: BatteryService.percentage + "% " + BatteryService.icon
+    text: BatteryService.icon + " " + BatteryService.percentage + "%"
 }

@@ -53,11 +53,11 @@ Item {
             anchors.centerIn: parent
             spacing: 8
 
-            Battery {
-                id: battery
-            }
             Network {
                 id: network
+            }
+            Battery {
+                id: battery
             }
         }
     }
