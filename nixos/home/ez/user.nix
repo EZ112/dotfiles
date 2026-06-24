@@ -37,7 +37,6 @@ in
     sessionVariables = import ./variables.nix { inherit pkgs; };
     packages = with pkgs; [
       wlr-which-key # App launcher
-      waybar # Bar
       font-manager # Font
 
       # Wallpaper
@@ -136,7 +135,6 @@ in
           "hypr" = "hypr";
           "nvim" = "nvim";
           "quickshell" = "configs/quickshell";
-          "waybar" = "configs/waybar";
         };
         store = false;
       }
