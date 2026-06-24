@@ -1,0 +1,8 @@
+singleton Theme 1.0 Theme.qml
+
+singleton BatteryService 1.0 services/BatteryService.qml
+
+Bar 1.0 components/Bar.qml
+Battery 1.0 components/barSections/Battery.qml
+Datetime 1.0 components/barSections/Datetime.qml
+Workspaces 1.0 components/barSections/Workspaces.qml

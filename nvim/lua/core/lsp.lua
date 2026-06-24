@@ -9,6 +9,7 @@ local servers = {
   'basedpyright',
   'ruff',
   'tailwindcss',
+  'qmlls',
 }
 
 vim.lsp.enable(servers)

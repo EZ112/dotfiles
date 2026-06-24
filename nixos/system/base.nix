@@ -28,5 +28,7 @@
     efi.canTouchEfiVariables = true;
   };
 
+  services.upower.enable = true;
+
   time.timeZone = "Asia/Jakarta";
 }

@@ -1,5 +1,6 @@
 {
   config,
+  lib,
   inputs,
   pkgs,
   ...
@@ -66,6 +67,9 @@ in
       # File manager
       pcmanfm
 
+      # Shell toolkit
+      quickshell
+
       # Package manager
       luajitPackages.luarocks
 
@@ -78,6 +82,7 @@ in
       typescript-language-server
       tailwindcss-language-server
       emmet-ls
+      kdePackages.qtdeclarative
       basedpyright
       ruff
 
@@ -98,6 +103,14 @@ in
         ".claude/skills" = "ai/claude/skills";
       };
       store = false;
+    };
+
+    activation = {
+      initQmlls = lib.hm.dag.entryAfter [ "writeBoundary" "linkGeneration" ] ''
+        if [ ! -f "$HOME/.config/quickshell/.qmlls.ini" ]; then
+          touch "$HOME/.config/quickshell/.qmlls.ini"
+        fi
+      '';
     };
 
     stateVersion = "25.05"; # Do not Change this value
@@ -122,6 +135,7 @@ in
 
           "hypr" = "hypr";
           "nvim" = "nvim";
+          "quickshell" = "configs/quickshell";
           "waybar" = "configs/waybar";
         };
         store = false;
