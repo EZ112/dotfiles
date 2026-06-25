@@ -4,7 +4,7 @@ import QtQuick
 import "../"
 
 QtObject {
-    readonly property var battery: UPower.displayDevice
+    readonly property UPowerDevice battery: UPower.displayDevice
     readonly property bool hasBattery: battery !== null && battery.isPresent
     readonly property real percentage: hasBattery ? Math.floor(battery.percentage * 100) : 0
     readonly property bool charging: hasBattery ? battery.state === UPowerDeviceState.Charging : false
@@ -17,7 +17,7 @@ QtObject {
         return Theme.fgColor;
     }
 
-    readonly property var icons: ["󰁻", "󰁽", "󰁿", "󰂁", "󰁹"]
+    readonly property list<string> icons: ["󰁻", "󰁽", "󰁿", "󰂁", "󰁹"]
     readonly property string icon: {
         if (!hasBattery)
             return "";
@@ -25,4 +25,6 @@ QtObject {
             return "󰂄";
         return icons[Math.min(icons.length - 1, Math.floor(percentage / 20))];
     }
+
+    readonly property string label: icon + " " + percentage + "%"
 }

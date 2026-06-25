@@ -5,7 +5,7 @@ Variants {
     model: Quickshell.screens
     delegate: Component {
         PanelWindow {
-            required property var modelData
+            required property ShellScreen modelData
             screen: modelData
 
             anchors {

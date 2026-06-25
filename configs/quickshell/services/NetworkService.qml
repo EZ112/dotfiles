@@ -4,30 +4,29 @@ import QtQuick
 
 QtObject {
     readonly property bool connected: Networking.connectivity !== NetworkConnectivity.None
-    readonly property var wifiDevice: Networking.devices.values.find(d => d instanceof WifiDevice)
-    readonly property var wiredDevice: Networking.devices.values.find(d => d instanceof WiredDevice)
+    readonly property NetworkDevice networkDevice: Networking.devices.values.find(d => d.connected) ?? null
 
-    readonly property bool isWifi: wifiDevice !== undefined && wifiDevice.state === ConnectionState.Connected
-    readonly property bool isEthernet: wiredDevice !== undefined && wiredDevice.state === ConnectionState.Connected
-
-    readonly property var wifiNetwork: {
-        if (!isWifi)
+    readonly property WifiNetwork wifiNetwork: {
+        if (!networkDevice || networkDevice.type !== DeviceType.Wifi)
             return null;
-        return wifiDevice.networks.values.find(d => d instanceof WifiNetwork);
+        return networkDevice.networks.values.find(d => d instanceof WifiNetwork);
     }
+
     readonly property int strength: {
         if (!wifiNetwork)
             return 0;
         return Math.round(wifiNetwork.signalStrength * 100);
     }
 
-    readonly property var icons: ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+    readonly property list<string> icons: ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
     readonly property string icon: {
-        if (!connected)
+        if (!connected || !networkDevice)
             return "󰤭";
-        if (isEthernet)
+        if (networkDevice.type === DeviceType.Wired)
             return "󰈀";
 
         return icons[Math.min(icons.length - 1, Math.floor(strength / 20))];
     }
+
+    readonly property string label: icon + (networkDevice.type === DeviceType.Wifi ? "  " + strength + "%" : "")
 }

@@ -5,5 +5,5 @@ Text {
     color: NetworkService.connected ? Theme.fgColor : Theme.criticalColor
     font.family: Theme.fontFamily
     font.pixelSize: Theme.fontSize
-    text: NetworkService.icon + (NetworkService.isWifi ? "  " + NetworkService.strength + "%" : "")
+    text: NetworkService.label
 }

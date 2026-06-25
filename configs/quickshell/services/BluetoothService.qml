@@ -16,9 +16,7 @@ QtObject {
         return "󰂰";
     }
 
-    readonly property string label: {
-        return deviceName;
-    }
+    readonly property string label: icon + (connectedDevice ? "  " + deviceName : "")
 
     function toggle() {
         adapter.enabled = !adapter.enabled;
