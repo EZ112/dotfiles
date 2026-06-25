@@ -1,4 +1,5 @@
 pragma Singleton
+import Quickshell
 import QtQuick
 
 QtObject {
@@ -15,4 +16,7 @@ QtObject {
     readonly property int bgRadius: 8
     readonly property int barHeight: 36
     readonly property int barItemHeight: barHeight - 8
+
+    readonly property string wallpaperPath: "file://" + Quickshell.env("HOME") + "/dotfiles/wallpapers/"
+    readonly property string defaultWallpaper: "live-1.mp4"
 }

@@ -1,24 +1,36 @@
 import Quickshell
 import QtQuick
 
-Variants {
-    model: Quickshell.screens
-    delegate: Component {
-        PanelWindow {
-            required property ShellScreen modelData
-            screen: modelData
-
-            anchors {
-                top: true
-                left: true
-                right: true
+ShellRoot {
+    Variants {
+        model: Quickshell.screens
+        delegate: Component {
+            Wallpaper {
+                required property ShellScreen modelData
+                screen: modelData
             }
+        }
+    }
 
-            implicitHeight: Theme.barHeight
-            color: "transparent"
+    Variants {
+        model: Quickshell.screens
+        delegate: Component {
+            PanelWindow {
+                required property ShellScreen modelData
+                screen: modelData
 
-            Bar {
-                anchors.fill: parent
+                anchors {
+                    top: true
+                    left: true
+                    right: true
+                }
+
+                implicitHeight: Theme.barHeight
+                color: "transparent"
+
+                Bar {
+                    anchors.fill: parent
+                }
             }
         }
     }

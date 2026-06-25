@@ -1,5 +1,6 @@
 {
   config,
+  pkgs,
   lib,
   modulesPath,
   ...
@@ -27,7 +28,12 @@
 
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      nvidia-vaapi-driver
+    ];
+  };
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
@@ -36,7 +42,7 @@
     powerManagement.enable = false;
     powerManagement.finegrained = false;
 
-    open = false;
+    open = true;
     nvidiaSettings = false;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };

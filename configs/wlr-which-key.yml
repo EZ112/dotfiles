@@ -55,6 +55,3 @@ menu:
   - key: "t"
     desc: Terminal - alacritty
     cmd: uwsm app -- alacritty
-  - key: "w"
-    desc: Wallpaper - waypaper
-    cmd: uwsm app -- waypaper

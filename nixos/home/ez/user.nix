@@ -40,10 +40,6 @@ in
       wlr-which-key # App launcher
       font-manager # Font
 
-      # Wallpaper
-      awww
-      waypaper
-
       # Notification
       dunst
       libnotify
