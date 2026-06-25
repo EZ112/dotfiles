@@ -15,7 +15,7 @@ PanelWindow {
     WlrLayershell.layer: WlrLayer.Background
     WlrLayershell.exclusionMode: ExclusionMode.Ignore
 
-    color: "black"
+    color: Theme.bgColor
 
     MediaPlayer {
         id: player
