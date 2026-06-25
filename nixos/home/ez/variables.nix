@@ -11,6 +11,9 @@ let
     # ollama
     OLLAMA_FLASH_ATTENTION = 1;
     OLLAMA_KV_CACHE_TYPE = "q8_0";
+
+    #qt
+    QML_IMPORT_PATH = "${pkgs.qt6.qtmultimedia}/lib/qt-6/qml";
   };
 
   hosts = {
@@ -24,7 +27,6 @@ let
       __GL_MaxFramesAllowed = "1";
 
       # qt
-      QML_IMPORT_PATH = "${pkgs.qt6.qtmultimedia}/lib/qt-6/qml";
       QT_FFMPEG_DECODING_HW_DEVICE_TYPES = "cuda,vdpau,vaapi";
       QT_FFMPEG_HW_ALLOW_PROFILE_MISMATCH = "1";
     };
