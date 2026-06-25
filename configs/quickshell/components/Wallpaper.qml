@@ -20,10 +20,12 @@ PanelWindow {
     MediaPlayer {
         id: player
         source: Theme.wallpaperPath + Theme.defaultWallpaper
+        autoPlay: true
         loops: MediaPlayer.Infinite
         playbackRate: 1.0
         videoOutput: videoOutput
         audioOutput: AudioOutput {
+            muted: true
             volume: 0
         }
     }
@@ -33,6 +35,4 @@ PanelWindow {
         anchors.fill: parent
         fillMode: VideoOutput.PreserveAspectCrop
     }
-
-    Component.onCompleted: player.play()
 }

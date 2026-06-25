@@ -14,7 +14,7 @@ Item {
 
         height: Theme.barItemHeight
         width: workspaces.implicitWidth + 16
-        color: Qt.alpha(Theme.bgColor, 0.4)
+        color: Qt.alpha(Theme.bgColor, 0.8)
         radius: Theme.bgRadius
 
         Workspaces {
@@ -28,7 +28,7 @@ Item {
 
         height: Theme.barItemHeight
         width: datetime.implicitWidth + 16
-        color: Qt.alpha(Theme.bgColor, 0.4)
+        color: Qt.alpha(Theme.bgColor, 0.8)
         radius: Theme.bgRadius
 
         Datetime {
@@ -45,7 +45,7 @@ Item {
 
         height: Theme.barItemHeight
         width: rightSection.implicitWidth + 16
-        color: Qt.alpha(Theme.bgColor, 0.4)
+        color: Qt.alpha(Theme.bgColor, 0.8)
         radius: Theme.bgRadius
 
         RowLayout {
