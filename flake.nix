@@ -32,7 +32,10 @@
         host:
         nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs; };
+          specialArgs = {
+            inherit inputs;
+            hostName = host;
+          };
           modules = [ ./nixos/hosts/${host} ] ++ commonModules;
         };
     in

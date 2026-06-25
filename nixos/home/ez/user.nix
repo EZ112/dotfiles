@@ -3,6 +3,7 @@
   lib,
   inputs,
   pkgs,
+  hostName,
   ...
 }:
 
@@ -34,7 +35,7 @@ in
   home = {
     username = "ez";
     homeDirectory = "/home/ez";
-    sessionVariables = import ./variables.nix { inherit pkgs; };
+    sessionVariables = import ./variables.nix { inherit pkgs hostName; };
     packages = with pkgs; [
       wlr-which-key # App launcher
       font-manager # Font
@@ -68,6 +69,8 @@ in
 
       # Shell toolkit
       quickshell
+      qt6.qtdeclarative
+      qt6.qtmultimedia
 
       # Package manager
       luajitPackages.luarocks
@@ -81,7 +84,6 @@ in
       typescript-language-server
       tailwindcss-language-server
       emmet-ls
-      kdePackages.qtdeclarative
       basedpyright
       ruff
 
