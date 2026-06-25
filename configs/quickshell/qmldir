@@ -1,10 +1,12 @@
 singleton Theme 1.0 Theme.qml
 
 singleton BatteryService 1.0 services/BatteryService.qml
+singleton BluetoothService 1.0 services/BluetoothService.qml
 singleton NetworkService 1.0 services/NetworkService.qml
 
 Bar 1.0 components/Bar.qml
 Battery 1.0 components/barSections/Battery.qml
+Bluetooth 1.0 components/barSections/Bluetooth.qml
 Datetime 1.0 components/barSections/Datetime.qml
 Network 1.0 components/barSections/Network.qml
 Workspaces 1.0 components/barSections/Workspaces.qml

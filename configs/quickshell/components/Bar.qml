@@ -53,6 +53,9 @@ Item {
             anchors.centerIn: parent
             spacing: 8
 
+            Bluetooth {
+                id: bluetooth
+            }
             Network {
                 id: network
             }
