@@ -27,7 +27,7 @@ let
       __GL_MaxFramesAllowed = "1";
 
       # qt
-      QT_FFMPEG_DECODING_HW_DEVICE_TYPES = "cuda,vdpau,vaapi";
+      QT_FFMPEG_DECODING_HW_DEVICE_TYPES = "cuda,vaapi";
       QT_FFMPEG_HW_ALLOW_PROFILE_MISMATCH = "1";
     };
     nokron = { };
