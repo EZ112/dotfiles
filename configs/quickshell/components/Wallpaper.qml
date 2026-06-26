@@ -18,7 +18,6 @@ PanelWindow {
     color: Theme.bgColor
 
     MediaPlayer {
-        id: player
         source: Theme.wallpaperPath + Theme.defaultWallpaper
         autoPlay: true
         loops: MediaPlayer.Infinite

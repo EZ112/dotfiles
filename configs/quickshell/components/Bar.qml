@@ -1,66 +1,52 @@
+import Quickshell
 import QtQuick
 import QtQuick.Layouts
 import "../"
 
-Item {
+PanelWindow {
     anchors {
-        fill: parent
-        margins: 4
+        top: true
+        left: true
+        right: true
     }
 
-    Rectangle {
-        anchors.left: parent.left
-        anchors.verticalCenter: parent.verticalCenter
+    implicitHeight: Theme.barHeight
+    color: "transparent"
 
-        height: Theme.barItemHeight
-        width: workspaces.implicitWidth + 16
-        color: Qt.alpha(Theme.bgColor, 0.8)
-        radius: Theme.bgRadius
-
-        Workspaces {
-            id: workspaces
-            anchors.centerIn: parent
+    Item {
+        anchors {
+            fill: parent
+            margins: 4
         }
-    }
 
-    Rectangle {
-        anchors.centerIn: parent
+        BarSection {
+            anchors.left: parent.left
+            anchors.verticalCenter: parent.verticalCenter
 
-        height: Theme.barItemHeight
-        width: datetime.implicitWidth + 16
-        color: Qt.alpha(Theme.bgColor, 0.8)
-        radius: Theme.bgRadius
-
-        Datetime {
-            id: datetime
-            anchors.fill: parent
-            horizontalAlignment: Text.AlignHCenter
-            verticalAlignment: Text.AlignVCenter
+            Workspaces {
+                anchors.centerIn: parent
+            }
         }
-    }
 
-    Rectangle {
-        anchors.right: parent.right
-        anchors.verticalCenter: parent.verticalCenter
-
-        height: Theme.barItemHeight
-        width: rightSection.implicitWidth + 16
-        color: Qt.alpha(Theme.bgColor, 0.8)
-        radius: Theme.bgRadius
-
-        RowLayout {
-            id: rightSection
+        BarSection {
             anchors.centerIn: parent
-            spacing: 8
 
-            Bluetooth {
-                id: bluetooth
+            Datetime {
+                anchors.centerIn: parent
             }
-            Network {
-                id: network
-            }
-            Battery {
-                id: battery
+        }
+
+        BarSection {
+            anchors.right: parent.right
+            anchors.verticalCenter: parent.verticalCenter
+
+            RowLayout {
+                anchors.centerIn: parent
+                spacing: 8
+
+                Bluetooth {}
+                Network {}
+                Battery {}
             }
         }
     }

@@ -3,7 +3,6 @@ import QtQuick
 import "../../"
 
 Text {
-    id: root
     color: Theme.fgColor
     font {
         family: Theme.fontFamily

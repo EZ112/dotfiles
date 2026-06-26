@@ -5,6 +5,7 @@ singleton BluetoothService 1.0 services/BluetoothService.qml
 singleton NetworkService 1.0 services/NetworkService.qml
 
 Bar 1.0 components/Bar.qml
+BarSection 1.0 components/BarSection.qml
 Wallpaper 1.0 components/Wallpaper.qml
 
 Battery 1.0 components/barSections/Battery.qml
