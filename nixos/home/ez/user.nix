@@ -38,6 +38,7 @@ in
     sessionVariables = import ./variables.nix { inherit pkgs hostName; };
     packages = with pkgs; [
       wlr-which-key # App launcher
+      brave # Browser
       font-manager # Font
 
       # Notification
