@@ -95,7 +95,6 @@ in
 
     file = mkDotfileLinks {
       files = {
-        ".bashrc_local.example" = ".bashrc_local.example";
         ".claude/skills" = "ai/claude/skills";
       };
       store = false;
