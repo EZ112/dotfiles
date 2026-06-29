@@ -17,7 +17,7 @@ QtObject {
     readonly property int barHeight: 36
     readonly property int barItemHeight: barHeight - 8
 
-    readonly property int notificationExpireTimeout: 2000
+    readonly property int notificationExpireTimeout: 5000
 
     readonly property string wallpaperPath: "file://" + Quickshell.env("HOME") + "/dotfiles/wallpapers/"
     readonly property string defaultWallpaper: "live-1.mp4"
