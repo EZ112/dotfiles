@@ -21,4 +21,21 @@ ShellRoot {
             }
         }
     }
+
+    PanelWindow {
+        anchors {
+            top: true
+            right: true
+        }
+        screen: Quickshell.screens.find(s => s.name === Theme.mainMonitor)
+
+        width: notifManager.implicitWidth
+        height: notifManager.implicitHeight
+        color: "transparent"
+        exclusionMode: ExclusionMode.Ignore
+
+        NotificationManager {
+            id: notifManager
+        }
+    }
 }
