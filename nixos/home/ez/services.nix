@@ -9,7 +9,7 @@ let
     EVENTS=$(${pkgs.gcalcli}/bin/gcalcli remind 15 'echo %s')
 
     if [ ! -z "$EVENTS" ]; then
-      ${pkgs.dunst}/bin/dunstify -a "Google Calendar" -h string:x-dunst-stack-tag:calendar_alert "Upcoming Event" "$EVENTS";
+      ${pkgs.libnotify}/bin/notify-send -a "Google Calendar" "Upcoming Event" "$EVENTS"
       ${pkgs.pipewire}/bin/pw-play ${inputs.self + /sfx/notification.oga}
     fi
   '';
@@ -18,7 +18,7 @@ in
   systemd.user = {
     services.gcal-notifier = {
       Unit = {
-        Description = "Google Calendar Dunst Notifier";
+        Description = "Google Calendar Notifier";
         After = [ "network-online.target" ];
       };
 

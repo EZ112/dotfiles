@@ -41,7 +41,6 @@ in
       font-manager # Font
 
       # Notification
-      dunst
       libnotify
 
       # Compiler
@@ -124,7 +123,6 @@ in
     configFile =
       mkDotfileLinks {
         files = {
-          "dunst/dunstrc" = "configs/dunstrc";
           "fastfetch/config.jsonc" = "configs/fastfetch.jsonc";
           "mpv/input.conf" = "configs/mpv.conf";
           "starship.toml" = "configs/starship.toml";

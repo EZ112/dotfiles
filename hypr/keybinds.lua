@@ -11,11 +11,6 @@ local mod = function(...)
 	return table.concat({ mainMod, ... }, " + ")
 end
 
-local volumeDunst =
-	"dunstify -h string:x-dunst-stack-tag:volume -h int:value:\"$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2 * 100)}')\" \"Volume: $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2 * 100)}')%\""
-local brightnessDunst =
-	'dunstify -h string:x-dunst-stack-tag:brightness -h int:value:"$(brightnessctl -m | cut -d, -f4 | tr -d %)" "Brightness: $(brightnessctl -m | cut -d, -f4 | tr -d %)%"'
-
 local binds = {
 	{ mod("T"), hl.dsp.exec_cmd(terminal) },
 	{ mod("Q"), hl.dsp.window.close() },
@@ -65,22 +60,6 @@ local binds = {
 	},
 	{ "XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true } },
 	{ "XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true } },
-
-	-- Volume OSD (dunst notification)
-	{ "XF86AudioRaiseVolume", hl.dsp.exec_cmd(volumeDunst), { locked = true, repeating = true } },
-	{ "XF86AudioLowerVolume", hl.dsp.exec_cmd(volumeDunst), { locked = true, repeating = true } },
-
-	-- Brightness
-	{
-		"XF86MonBrightnessUp",
-		hl.dsp.exec_cmd("brightnessctl s 10%+ && " .. brightnessDunst),
-		{ locked = true, repeating = true },
-	},
-	{
-		"XF86MonBrightnessDown",
-		hl.dsp.exec_cmd("brightnessctl s 10%- && " .. brightnessDunst),
-		{ locked = true, repeating = true },
-	},
 
 	-- Media controls
 	{ "XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true } },
