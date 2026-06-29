@@ -2,6 +2,7 @@ singleton Theme 1.0 Theme.qml
 
 singleton BatteryService 1.0 services/BatteryService.qml
 singleton BluetoothService 1.0 services/BluetoothService.qml
+singleton DatetimeService 1.0 services/DatetimeService.qml
 singleton NetworkService 1.0 services/NetworkService.qml
 
 Bar 1.0 components/Bar.qml

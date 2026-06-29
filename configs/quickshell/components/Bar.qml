@@ -20,8 +20,10 @@ PanelWindow {
         }
 
         BarSection {
-            anchors.left: parent.left
-            anchors.verticalCenter: parent.verticalCenter
+            anchors {
+                left: parent.left
+                verticalCenter: parent.verticalCenter
+            }
 
             Workspaces {
                 anchors.centerIn: parent
@@ -37,8 +39,10 @@ PanelWindow {
         }
 
         BarSection {
-            anchors.right: parent.right
-            anchors.verticalCenter: parent.verticalCenter
+            anchors {
+                right: parent.right
+                verticalCenter: parent.verticalCenter
+            }
 
             RowLayout {
                 anchors.centerIn: parent

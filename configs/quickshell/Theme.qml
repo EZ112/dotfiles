@@ -13,7 +13,7 @@ QtObject {
     readonly property color warningColor: "#D79921"
     readonly property color criticalColor: "#CC241D"
 
-    readonly property int bgRadius: 8
+    readonly property int barRadius: 8
     readonly property int barHeight: 36
     readonly property int barItemHeight: barHeight - 8
 

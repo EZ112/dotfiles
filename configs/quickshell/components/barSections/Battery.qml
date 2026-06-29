@@ -4,7 +4,10 @@ import "../../"
 Text {
     visible: BatteryService.hasBattery
     color: BatteryService.statusColor
-    font.family: Theme.fontFamily
-    font.pixelSize: Theme.fontSize
     text: BatteryService.label
+
+    font {
+        family: Theme.fontFamily
+        pixelSize: Theme.fontSize
+    }
 }

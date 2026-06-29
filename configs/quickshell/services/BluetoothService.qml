@@ -5,7 +5,8 @@ import QtQuick
 QtObject {
     readonly property BluetoothAdapter adapter: Bluetooth.defaultAdapter
     readonly property bool enabled: adapter.enabled
-    readonly property BluetoothDevice connectedDevice: Bluetooth.devices.values.find(d => d.connected) ?? null
+    readonly property var deviceStates: Bluetooth.devices.values.map(d => d.state)
+    readonly property BluetoothDevice connectedDevice: Bluetooth.devices.values[deviceStates.indexOf(BluetoothDeviceState.Connected)] ?? null
     readonly property string deviceName: connectedDevice ? connectedDevice.name : ""
 
     readonly property string icon: {

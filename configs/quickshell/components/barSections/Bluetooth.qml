@@ -3,9 +3,12 @@ import "../../"
 
 Text {
     color: BluetoothService.enabled ? Theme.fgColor : Theme.fgMutedColor
-    font.family: Theme.fontFamily
-    font.pixelSize: Theme.fontSize
     text: BluetoothService.label
+
+    font {
+        family: Theme.fontFamily
+        pixelSize: Theme.fontSize
+    }
 
     MouseArea {
         anchors.fill: parent

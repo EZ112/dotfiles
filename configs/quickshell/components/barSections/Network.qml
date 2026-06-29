@@ -2,8 +2,11 @@ import QtQuick
 import "../../"
 
 Text {
+    font {
+        family: Theme.fontFamily
+        pixelSize: Theme.fontSize
+    }
+
     color: NetworkService.connected ? Theme.fgColor : Theme.criticalColor
-    font.family: Theme.fontFamily
-    font.pixelSize: Theme.fontSize
     text: NetworkService.label
 }
