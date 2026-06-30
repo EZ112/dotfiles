@@ -3,8 +3,6 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
-    ./gtk.nix
-    ./qt.nix
     ./packages.nix
     ./ssh.nix
     ./symlinks.nix
@@ -12,6 +10,7 @@
 
     ./programs
     ./services
+    ./themes
   ];
 
   home = {
