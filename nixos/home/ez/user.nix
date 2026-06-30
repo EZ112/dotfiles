@@ -4,7 +4,6 @@
 
   imports = [
     ./packages.nix
-    ./ssh.nix
     ./symlinks.nix
     ./variables.nix
 

@@ -7,6 +7,7 @@
     ./kitty.nix
     ./mpv.nix
     ./obs-studio.nix
+    ./ssh.nix
     ./starship.nix
     ./tmux.nix
     ./yazi.nix
