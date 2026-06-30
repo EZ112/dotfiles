@@ -27,7 +27,7 @@ local window_rules = {
 	},
 	{
 		name = "kitty",
-		match = { class = "^(Kitty)$" },
+		match = { class = "^(kitty)$" },
 		workspace = 2,
 	},
 }

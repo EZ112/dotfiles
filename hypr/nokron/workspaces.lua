@@ -5,7 +5,7 @@ local workspace_rules = { { workspace = "1", monitor = "eDP-1", default = true }
 local window_rules = {
 	{
 		name = "kitty",
-		match = { class = "^(Kitty)$" },
+		match = { class = "^(kitty)$" },
 		workspace = "1",
 	},
 	{
