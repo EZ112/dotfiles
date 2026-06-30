@@ -21,6 +21,22 @@
         "type": "github"
       }
     },
+    "gruvbox-material-yazi": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1778079450,
+        "narHash": "sha256-mfIdFIe++jRDbTQBcLlpAq91JzmgL2SvqPxkYuCnKdQ=",
+        "owner": "matt-dong-123",
+        "repo": "gruvbox-material.yazi",
+        "rev": "e0fd2d800aeb6adb680496b1a5ef125b901b7413",
+        "type": "github"
+      },
+      "original": {
+        "owner": "matt-dong-123",
+        "repo": "gruvbox-material.yazi",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -61,6 +77,7 @@
     "root": {
       "inputs": {
         "disko": "disko",
+        "gruvbox-material-yazi": "gruvbox-material-yazi",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       }

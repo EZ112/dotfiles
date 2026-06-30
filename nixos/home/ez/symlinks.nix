@@ -39,25 +39,16 @@ in
   };
 
   xdg = {
-    configFile =
-      mkDotfileLinks {
-        files = {
-          "fastfetch/config.jsonc" = "configs/fastfetch.jsonc";
-          "mpv/input.conf" = "configs/mpv.conf";
-          "starship.toml" = "configs/starship.toml";
-          "wlr-which-key/config.yaml" = "configs/wlr-which-key.yml";
+    configFile = mkDotfileLinks {
+      files = {
+        "fastfetch/config.jsonc" = "configs/fastfetch.jsonc";
+        "wlr-which-key/config.yaml" = "configs/wlr-which-key.yml";
 
-          "hypr" = "hypr";
-          "nvim" = "nvim";
-          "quickshell" = "configs/quickshell";
-        };
-        store = false;
-      }
-      // mkDotfileLinks {
-        files = {
-          "yazi/keymap.toml" = /configs/yazi/keymap.toml;
-          "yazi/flavors" = /configs/yazi/flavors;
-        };
+        "hypr" = "hypr";
+        "nvim" = "nvim";
+        "quickshell" = "configs/quickshell";
       };
+      store = false;
+    };
   };
 }

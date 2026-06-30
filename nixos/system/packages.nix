@@ -16,7 +16,6 @@
     # Media & Audio
     ffmpeg
     jamesdsp
-    mpv
 
     # Display & System
     systemd-manager-tui

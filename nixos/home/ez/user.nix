@@ -5,13 +5,12 @@
   imports = [
     ./gtk.nix
     ./packages.nix
-    ./programs.nix
     ./services.nix
-    ./symlinks.nix
     ./ssh.nix
-
-    ./aliases.nix
+    ./symlinks.nix
     ./variables.nix
+
+    ./programs
   ];
 
   home = {
@@ -26,6 +25,7 @@
       enable = true;
       defaultApplications = {
         "inode/directory" = "pcmanfm.desktop";
+        "video/*" = "mpv.desktop";
       };
     };
   };

@@ -4,9 +4,9 @@
     wlr-which-key # App launcher
     brave # Browser
     font-manager # Font
-
-    # Notification
-    libnotify
+    libnotify # Notification
+    pcmanfm # File manager
+    claude-code # AI
 
     # Compiler
     gcc
@@ -17,15 +17,9 @@
     # Chat
     discord
 
-    # AI
-    claude-code
-
     # Devtool
     bruno
     devtoolbox
-
-    # File manager
-    pcmanfm
 
     # Shell toolkit
     quickshell

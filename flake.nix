@@ -13,6 +13,11 @@
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    gruvbox-material-yazi = {
+      url = "github:matt-dong-123/gruvbox-material.yazi";
+      flake = false;
+    };
   };
 
   outputs =
