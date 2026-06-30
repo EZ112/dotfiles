@@ -4,13 +4,14 @@
 
   imports = [
     ./gtk.nix
+    ./qt.nix
     ./packages.nix
-    ./services.nix
     ./ssh.nix
     ./symlinks.nix
     ./variables.nix
 
     ./programs
+    ./services
   ];
 
   home = {
