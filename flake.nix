@@ -41,7 +41,7 @@
             inherit inputs;
             hostName = host;
           };
-          modules = [ ./nixos/hosts/${host} ] ++ commonModules;
+          modules = [ ./nixos/configuration.nix ] ++ commonModules;
         };
     in
     {

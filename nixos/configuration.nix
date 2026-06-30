@@ -1,23 +1,9 @@
-{ ... }:
+{ hostName, ... }:
 {
   imports = [
-    # System
-    ./system/base.nix
-    ./system/audio.nix
-    ./system/bluetooth.nix
-    ./system/compositor.nix
-    ./system/file-manager.nix
-    ./system/fonts.nix
-    ./system/login.nix
-    ./system/network.nix
-    ./system/packages.nix
-    ./system/polkit.nix
-    ./system/virtual-camera.nix
-
-    # User
+    ./system
     ./user/ez.nix
-
-    # Home Manager
+    ./hosts/${hostName}
     ./home/config.nix
   ];
 

@@ -6,7 +6,6 @@
     ./cuda.nix
     ./packages.nix
     ./services.nix
-    ../../configuration.nix
   ];
 
   networking.hostName = "leyndell";
