@@ -53,5 +53,5 @@ menu:
     desc: Broadcast - obs
     cmd: uwsm app -- obs
   - key: "t"
-    desc: Terminal - alacritty
-    cmd: uwsm app -- alacritty
+    desc: Terminal - kitty
+    cmd: uwsm app -- kitty

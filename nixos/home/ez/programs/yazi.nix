@@ -2,16 +2,17 @@
 {
   programs.yazi = {
     enable = true;
+
     flavors = {
       gruvbox-material = inputs.gruvbox-material-yazi;
     };
-
     theme = {
       flavor = {
         dark = "gruvbox-material";
         light = "gruvbox-material";
       };
     };
+
     plugins = {
       mount = pkgs.yaziPlugins.mount;
     };
@@ -23,6 +24,7 @@
         }
       ];
     };
+
     settings = {
       opener = {
         play = [
@@ -40,9 +42,7 @@
         }
       ];
     };
+
     shellWrapperName = "y";
-    extraPackages = [
-      pkgs.ueberzugpp
-    ];
   };
 }

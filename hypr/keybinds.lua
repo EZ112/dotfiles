@@ -1,7 +1,7 @@
 local utils = require("utils")
 
 -- Programs
-local terminal = "alacritty"
+local terminal = "kitty"
 local menu = "wlr-which-key"
 
 -- Keybinds

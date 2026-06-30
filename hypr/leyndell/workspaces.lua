@@ -26,8 +26,8 @@ local window_rules = {
 		workspace = 2,
 	},
 	{
-		name = "alacritty",
-		match = { class = "^(Alacritty)$" },
+		name = "kitty",
+		match = { class = "^(Kitty)$" },
 		workspace = 2,
 	},
 }

@@ -4,8 +4,8 @@ local monitor_rules = { { output = "eDP-1", mode = "preferred", position = "auto
 local workspace_rules = { { workspace = "1", monitor = "eDP-1", default = true } }
 local window_rules = {
 	{
-		name = "alacritty",
-		match = { class = "^(Alacritty)$" },
+		name = "kitty",
+		match = { class = "^(Kitty)$" },
 		workspace = "1",
 	},
 	{

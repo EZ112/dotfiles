@@ -17,14 +17,6 @@ local window_rules = {
 		no_initial_focus = true,
 		workspace = 10,
 	},
-	{
-		name = "ueberzugpp",
-		match = { class = "^ueberzugpp_.*", title = "^ueberzugpp_.*" },
-		float = true,
-		pin = true,
-		move = "((monitor_w-window_w)-10) 10",
-		no_focus = true,
-	},
 }
 
 utils.apply_all_rules({
