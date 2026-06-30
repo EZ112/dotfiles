@@ -3,7 +3,6 @@
   hostName,
   ...
 }:
-
 {
   home-manager = {
     extraSpecialArgs = { inherit inputs hostName; };

@@ -1,8 +1,4 @@
-{
-  pkgs,
-  ...
-}:
-
+{ pkgs, ... }:
 {
   # Hyprland
   programs.hyprland = {

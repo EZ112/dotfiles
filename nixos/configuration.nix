@@ -1,11 +1,4 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
-{
-  ...
-}:
-
+{ ... }:
 {
   imports = [
     # System
@@ -15,16 +8,14 @@
     ./system/compositor.nix
     ./system/file-manager.nix
     ./system/fonts.nix
+    ./system/login.nix
     ./system/network.nix
+    ./system/packages.nix
     ./system/polkit.nix
     ./system/virtual-camera.nix
-    ./system/login.nix
 
     # User
     ./user/ez.nix
-
-    # Packages
-    ./pkgs/lib.nix
 
     # Home Manager
     ./home/config.nix

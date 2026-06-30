@@ -3,7 +3,6 @@
   pkgs,
   ...
 }:
-
 let
   calendarNotifier = pkgs.writeShellScriptBin "calendar-notifier" ''
     EVENTS=$(${pkgs.gcalcli}/bin/gcalcli remind 15 'echo %s')

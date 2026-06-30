@@ -3,7 +3,7 @@
   imports = [
     ./hardware.nix
     ./disko.nix
-    ./lib.nix
+    ./packages.nix
     ./services.nix
     ../../configuration.nix
   ];

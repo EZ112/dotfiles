@@ -33,4 +33,6 @@ let
     nokron = { };
   };
 in
-commonVariables // (hosts.${hostName} or { })
+{
+  home.sessionVariables = commonVariables // (hosts.${hostName} or { });
+}

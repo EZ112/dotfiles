@@ -4,7 +4,7 @@
     ./hardware.nix
     ./disko.nix
     ./cuda.nix
-    ./lib.nix
+    ./packages.nix
     ./services.nix
     ../../configuration.nix
   ];

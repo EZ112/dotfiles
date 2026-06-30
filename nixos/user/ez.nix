@@ -1,7 +1,4 @@
-{
-  ...
-}:
-
+{ ... }:
 {
   users.users.ez = {
     isNormalUser = true;
