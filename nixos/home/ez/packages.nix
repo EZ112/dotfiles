@@ -21,6 +21,9 @@
     bruno
     devtoolbox
 
+    # Game Engine
+    godot
+
     # Shell toolkit
     quickshell
     qt6.qtdeclarative
@@ -40,6 +43,7 @@
     emmet-ls
     basedpyright
     ruff
+    rust-analyzer
 
     # Lint
     eslint_d
@@ -50,5 +54,6 @@
     stylua
     xmlformat
     nixfmt
+    rustfmt
   ];
 }

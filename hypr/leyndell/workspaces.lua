@@ -15,7 +15,7 @@ local window_rules = {
 		name = "brave-browser",
 		match = { class = "^(brave-browser)$" },
 		no_initial_focus = true,
-		workspace = 1,
+		workspace = "1",
 	},
 	{
 		name = "picture-in-picture",
@@ -23,13 +23,15 @@ local window_rules = {
 		float = true,
 		pin = true,
 		move = "((monitor_w-window_w)-10) ((monitor_h-window_h)-10)",
-		workspace = 2,
+		workspace = "2",
 	},
 	{
 		name = "kitty",
 		match = { class = "^(kitty)$" },
-		workspace = 2,
+		workspace = "2",
 	},
+	{ name = "godot-editor", match = { class = "Godot" }, workspace = "3" },
+	{ name = "godot-debug", match = { class = "godot" }, workspace = "9" },
 }
 local device_rules = {
 	{

@@ -10,6 +10,7 @@ local servers = {
   'ruff',
   'tailwindcss',
   'qmlls',
+  'rust_analyzer',
 }
 
 vim.lsp.enable(servers)

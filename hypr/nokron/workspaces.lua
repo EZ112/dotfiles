@@ -22,6 +22,8 @@ local window_rules = {
 		no_initial_focus = true,
 		workspace = "2",
 	},
+	{ name = "godot-editor", match = { class = "Godot" }, workspace = "3" },
+	{ name = "godot-debug", match = { class = "godot" }, workspace = "9" },
 }
 local device_rules = {
 	{

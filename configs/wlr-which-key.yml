@@ -49,6 +49,9 @@ menu:
   - key: "f"
     desc: File Manager - pcmanfm
     cmd: uwsm app -- pcmanfm
+  - key: "g"
+    desc: Game Engine - godot
+    cmd: uwsm app -- godot
   - key: "o"
     desc: Broadcast - obs
     cmd: uwsm app -- obs
