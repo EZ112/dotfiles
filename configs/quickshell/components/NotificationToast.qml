@@ -8,28 +8,40 @@ Rectangle {
 
     width: 300
     height: layout.implicitHeight + 16
-    color: Theme.bgColor
-    radius: 4
+    color: Qt.alpha(Theme.bgColor, 0.8)
 
-    border {
-        color: Qt.alpha(Theme.fgColor, 0.4)
-        width: 1
+    Rectangle {
+        anchors.left: parent.left
+        height: parent.height
+        width: 8
+        color: Theme.fgColor
     }
 
     ColumnLayout {
         id: layout
-        width: parent.width - 16
+        width: parent.width - 32
         anchors.centerIn: parent
 
         Text {
             text: notification.summary
+            font {
+                family: Theme.fontFamily
+                pixelSize: 16
+            }
             color: Theme.fgColor
             font.bold: true
         }
         Text {
+            Layout.fillWidth: true
             text: notification.body
-            color: Theme.fgColor
+            font {
+                family: Theme.fontFamily
+                pixelSize: 12
+            }
+            color: Theme.fgMutedColor
+            wrapMode: Text.WordWrap
             elide: Text.ElideRight
+            maximumLineCount: 3
         }
     }
 
