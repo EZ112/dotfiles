@@ -31,7 +31,6 @@ local window_rules = {
 		workspace = "2",
 	},
 	{ name = "godot-editor", match = { class = "Godot" }, workspace = "3" },
-	{ name = "godot-debug", match = { class = "godot" }, workspace = "9" },
 }
 local device_rules = {
 	{
