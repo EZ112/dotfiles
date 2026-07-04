@@ -61,6 +61,18 @@ local binds = {
 	{ "XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true } },
 	{ "XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true } },
 
+	-- Brightness
+	{
+		"XF86MonBrightnessUp",
+		hl.dsp.exec_cmd("brightnessctl s 10%+"),
+		{ locked = true, repeating = true },
+	},
+	{
+		"XF86MonBrightnessDown",
+		hl.dsp.exec_cmd("brightnessctl s 10%-"),
+		{ locked = true, repeating = true },
+	},
+
 	-- Media controls
 	{ "XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true } },
 	{ "XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true } },
