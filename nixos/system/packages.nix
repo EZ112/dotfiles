@@ -25,6 +25,7 @@
     # Clipboard & Utilities
     wl-clipboard
     impala
+    unrar
     unzip
   ];
 }
