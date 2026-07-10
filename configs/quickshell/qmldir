@@ -10,6 +10,7 @@ Bar 1.0 components/Bar.qml
 BarSection 1.0 components/BarSection.qml
 NotificationManager 1.0 components/NotificationManager.qml
 NotificationToast 1.0 components/NotificationToast.qml
+VolumeOsd 1.0 components/VolumeOsd.qml
 Wallpaper 1.0 components/Wallpaper.qml
 
 Battery 1.0 components/barSections/Battery.qml

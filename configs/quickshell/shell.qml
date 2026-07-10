@@ -38,4 +38,6 @@ ShellRoot {
             id: notifManager
         }
     }
+
+    VolumeOsd {}
 }
