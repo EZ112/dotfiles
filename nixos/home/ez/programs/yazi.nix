@@ -27,9 +27,16 @@
 
     settings = {
       opener = {
-        play = [
+        mpv = [
           {
             run = "mpv %s";
+            orphan = true;
+            for = "unix";
+          }
+        ];
+        zathura = [
+          {
+            run = "zathura %s";
             orphan = true;
             for = "unix";
           }
@@ -37,8 +44,12 @@
       };
       open.rules = [
         {
+          mime = "application/pdf";
+          use = "zathura";
+        }
+        {
           mime = "video/*";
-          use = "play";
+          use = "mpv";
         }
       ];
     };

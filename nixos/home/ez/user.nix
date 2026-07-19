@@ -23,6 +23,7 @@
     mimeApps = {
       enable = true;
       defaultApplications = {
+        "application/pdf" = "brave-browser.desktop";
         "inode/directory" = "pcmanfm.desktop";
         "video/*" = "mpv.desktop";
       };

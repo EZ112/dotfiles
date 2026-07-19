@@ -21,6 +21,9 @@
     bruno
     devtoolbox
 
+    # PDF
+    zathura
+
     # Game Engine
     godot
 
