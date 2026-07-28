@@ -5,6 +5,7 @@
     ./audio.nix
     ./bluetooth.nix
     ./compositor.nix
+    ./docker.nix
     ./file-manager.nix
     ./fonts.nix
     ./login.nix

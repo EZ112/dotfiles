@@ -2,7 +2,10 @@
 {
   users.users.ez = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [
+      "wheel"
+      "docker"
+    ];
   };
 
   nix.settings.trusted-users = [

@@ -4,6 +4,9 @@ let
     NIXPKGS_ALLOW_UNFREE = 1;
     EDITOR = "nvim";
 
+    # docker
+    DOCKER_HOST = "unix://$XDG_RUNTIME_DIR/docker.sock";
+
     # lua
     HYPRLAND_DIR = "${pkgs.hyprland}/share/hypr";
     VIMRUNTIME = "${pkgs.neovim-unwrapped}/share/nvim/runtime";
