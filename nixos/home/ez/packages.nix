@@ -24,7 +24,8 @@
     # PDF
     zathura
 
-    # Game Engine
+    # Game dev
+    blender
     godot
 
     # Shell toolkit
