@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
   virtualisation.docker = {
     enable = false;
@@ -8,7 +8,7 @@
       setSocketVariable = true;
 
       daemon.settings = {
-        data-root = "~/.local/docker";
+        data-root = "${config.users.users.ez.home}/.local/share/docker";
         dns = [
           "1.1.1.1"
           "8.8.8.8"
