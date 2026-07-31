@@ -1,7 +1,7 @@
 return {
   'saghen/blink.cmp',
   event = 'VeryLazy',
-  dependencies = { 'rafamadriz/friendly-snippets', 'kristijanhusak/vim-dadbod-completion' },
+  dependencies = { 'rafamadriz/friendly-snippets' },
   version = '1.*',
   opts = {
     keymap = {
@@ -11,13 +11,7 @@ return {
     },
     completion = { documentation = { auto_show = true } },
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer', 'dadbod' },
-      providers = {
-        dadbod = {
-          name = 'Dadbod',
-          module = 'vim_dadbod_completion.blink',
-        },
-      },
+      default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
     fuzzy = { implementation = 'prefer_rust_with_warning' },
   },

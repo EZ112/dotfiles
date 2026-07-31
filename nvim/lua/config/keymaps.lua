@@ -4,7 +4,6 @@ local dropbar_api = require('dropbar.api')
 local telescope_builtin = require('telescope.builtin')
 local code_action = require('tiny-code-action').code_action
 local gitsigns = require('gitsigns')
-local harpoon = require('harpoon')
 
 ---@param dir "next" | "prev"
 local nav_hunk = function(dir)
@@ -15,19 +14,6 @@ local nav_hunk = function(dir)
       gitsigns.nav_hunk(dir, { target = 'all' })
     end
   end
-end
-
-harpoon:setup()
-local harpoon_list = harpoon:list()
----@param method "add" | "next" | "prev"
-local harpoon_dispatch = function(method)
-  return function()
-    harpoon_list[method](harpoon_list)
-  end
-end
-
-local harpoon_menu = function()
-  harpoon.ui:toggle_quick_menu(harpoon_list)
 end
 
 local mappings = {
@@ -85,18 +71,8 @@ local mappings = {
   { { 'o', 'x' }, 'R', require('flash').treesitter_search, { desc = 'Treesitter Search' } },
   { 'c', '<c-s>', require('flash').toggle, { desc = 'Toggle Flash Search' } },
 
-  -- harpoon
-  { 'n', '<C-e>', harpoon_menu, { desc = 'Harpoon list' } },
-  { 'n', '<leader>a', harpoon_dispatch('add'), { desc = 'Harpoon add' } },
-  { 'n', '<C-j>', harpoon_dispatch('next'), { desc = 'Harpoon next item' } },
-  { 'n', '<C-k>', harpoon_dispatch('prev'), { desc = 'Harpoon prev item' } },
-
   -- lsp
   { 'n', 'gd', vim.lsp.buf.definition, { desc = 'LSP go to definition' } },
-
-  -- dadbod
-  { 'n', '<leader>du', '<cmd>DBUIToggle<cr>', { desc = 'Toggle Dadbod UI' } },
-  { 'n', '<leader>dl', '<cmd>DBUIFindBuffer<cr>', { desc = 'Find Last DB Buffer' } },
 
   -- wayfinder
   { 'n', '<leader>w', '<cmd>Wayfinder<cr>', { desc = 'Wayfinder' } },

@@ -1,8 +1,11 @@
 return {
-  'nvimdev/indentmini.nvim',
+  'shellRaining/hlchunk.nvim',
+  event = { 'BufReadPre', 'BufNewFile' },
   config = function()
-    require('indentmini').setup()
-    vim.cmd.highlight('link IndentLine Whitespace')
-    vim.cmd.highlight('link IndentLineCurrent Normal')
+    require('hlchunk').setup({
+      indent = {
+        enable = true,
+      },
+    })
   end,
 }
