@@ -1,28 +1,14 @@
 { ... }:
 {
   boot.loader = {
-    grub = {
+    systemd-boot = {
       enable = true;
-      device = "nodev";
-      efiSupport = true;
-
-      extraEntries = ''
-        search --no-floppy --file --set=win_root /Windows/Boot/EFI/bootmgfw.efi
-
-        if [ -n "$win_root" ]; then
-          menuentry "Windows" {
-            insmod part_gpt
-            insmod ntfs
-
-            set root=($win_root)
-            chainloader /Windows/Boot/EFI/bootmgfw.efi
-          }
-        fi
-      '';
+      configurationLimit = 10;
+      consoleMode = "max";
     };
-    timeout = 5;
 
     efi.canTouchEfiVariables = true;
+    timeout = 5;
   };
 
   services.upower.enable = true;
