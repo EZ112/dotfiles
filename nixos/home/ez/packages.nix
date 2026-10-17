@@ -50,6 +50,7 @@
     basedpyright
     ruff
     rust-analyzer
+    tofu-ls
 
     # Lint
     eslint_d
